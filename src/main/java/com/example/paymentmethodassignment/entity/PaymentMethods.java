@@ -17,6 +17,7 @@ public class PaymentMethods {
 	private int id;
 	private String name;
 	private String paymentType;
+	private String displayName;
 	@OneToMany(targetEntity = PaymentPlans.class, cascade=CascadeType.ALL)
 	@JoinColumn(name= "pm_fk", referencedColumnName="id")
 	private List<PaymentPlans> paymentPlans;
@@ -56,6 +57,12 @@ public class PaymentMethods {
 	public void setPaymentPlans(List<PaymentPlans> paymentPlans) {
 		this.paymentPlans = paymentPlans;
 	}
-	
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
 	
 }

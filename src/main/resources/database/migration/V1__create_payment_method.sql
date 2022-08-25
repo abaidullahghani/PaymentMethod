@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS `payment_methods` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) DEFAULT NULL,
+  `display_name` varchar(150) DEFAULT NULL,
   `payment_type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;

@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @JsonAutoDetect
-public class PaymentMethodBo {
+public class PaymentMethodResponseBo {
 
 	@NotNull
 	@JsonProperty("name")
@@ -28,12 +28,12 @@ public class PaymentMethodBo {
 	@JsonProperty("displayName")
 	private String displayName;
 	@JsonProperty("paymentPlans")
-	private List<PaymentPlansBo> paymentPlans;
+	private List<PaymentPlansResponseBo> paymentPlans;
 	
-	public PaymentMethodBo() {
+	public PaymentMethodResponseBo() {
 		super();
 	}
-	public PaymentMethodBo(String name, String paymentType, List<PaymentPlansBo> paymentPlans) {
+	public PaymentMethodResponseBo(String name, String paymentType, List<PaymentPlansResponseBo> paymentPlans) {
 		super();
 		this.name = name;
 		this.paymentType = paymentType;
@@ -52,10 +52,10 @@ public class PaymentMethodBo {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
-	public List<PaymentPlansBo> getPaymentPlans() {
+	public List<PaymentPlansResponseBo> getPaymentPlans() {
 		return paymentPlans;
 	}
-	public void setPaymentPlans(List<PaymentPlansBo> paymentPlans) {
+	public void setPaymentPlans(List<PaymentPlansResponseBo> paymentPlans) {
 		this.paymentPlans = paymentPlans;
 	}
 	
@@ -77,7 +77,7 @@ public class PaymentMethodBo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PaymentMethodBo other = (PaymentMethodBo) obj;
+		PaymentMethodResponseBo other = (PaymentMethodResponseBo) obj;
 		return Objects.equals(displayName, other.displayName) && Objects.equals(name, other.name)
 				&& Objects.equals(paymentPlans, other.paymentPlans) && Objects.equals(paymentType, other.paymentType);
 	}

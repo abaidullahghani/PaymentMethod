@@ -11,9 +11,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 @JsonAutoDetect
-public class PaymentPlansBo {
+public class PaymentPlansResponseBo {
 	
-	
+	private int id;
 	@NotNull
 	@JsonProperty("netAmount")
 	private float netAmount;
@@ -24,10 +24,10 @@ public class PaymentPlansBo {
 	private String currency;
 	private String duration;
 	
-	public PaymentPlansBo() {
+	public PaymentPlansResponseBo() {
 		super();
 	}
-	public PaymentPlansBo(float netAmount, float taxAmount, float grossAmount, String currency, String duration) {
+	public PaymentPlansResponseBo(float netAmount, float taxAmount, float grossAmount, String currency, String duration) {
 		super();
 		this.netAmount = netAmount;
 		this.taxAmount = taxAmount;
@@ -35,7 +35,12 @@ public class PaymentPlansBo {
 		this.currency = currency;
 		this.duration = duration;
 	}
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public float getNetAmount() {
 		return netAmount;
 	}
