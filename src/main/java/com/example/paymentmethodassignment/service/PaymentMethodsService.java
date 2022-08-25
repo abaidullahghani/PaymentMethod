@@ -27,11 +27,11 @@ public class PaymentMethodsService {
 	}
 	
 	public PaymentMethods getPaymentMethodById(Integer id) {
-		return paymentMethodsRepository.findById(id).orElse(null);
+		return paymentMethodsRepository.findById(id).orElseThrow();
 	}
 	
 	public PaymentMethods updatePaymentMethod(int id, PaymentMethods paymentMethod) {
-		PaymentMethods existingPaymentMethod = paymentMethodsRepository.findById(id).orElse(null);
+		PaymentMethods existingPaymentMethod = paymentMethodsRepository.findById(id).orElseThrow();
 		if(existingPaymentMethod != null) {
 			existingPaymentMethod = paymentMethod;
 			paymentMethodsRepository.save(existingPaymentMethod);

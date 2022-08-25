@@ -1,31 +1,51 @@
 package com.example.paymentmethodassignment.bo;
 
-import com.example.paymentmethodassignment.entity.PaymentMethods;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonAutoDetect
 public class PaymentMethodBo {
 
-	private PaymentMethods paymentMethods;
-
+	private int id;
+	private String name;
+	private String paymentType;
+	private List<PaymentPlansBo> paymentPlans;
+	
 	public PaymentMethodBo() {
 		super();
 	}
-	
-	public PaymentMethodBo(PaymentMethods paymentMethods) {
+	public PaymentMethodBo(String name, String paymentType, List<PaymentPlansBo> paymentPlans) {
 		super();
-		this.paymentMethods = paymentMethods;
+		this.name = name;
+		this.paymentType = paymentType;
+		this.paymentPlans = paymentPlans;
 	}
-
-	public PaymentMethods getPaymentMethods() {
-		return paymentMethods;
+	public int getId() {
+		return id;
 	}
-
-	public void setPaymentMethods(PaymentMethods paymentMethods) {
-		this.paymentMethods = paymentMethods;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	@Override
-	public String toString() {
-		return "PaymentMethodBo [paymentMethods=" + paymentMethods + "]";
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPaymentType() {
+		return paymentType;
+	}
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+	public List<PaymentPlansBo> getPaymentPlans() {
+		return paymentPlans;
+	}
+	public void setPaymentPlans(List<PaymentPlansBo> paymentPlans) {
+		this.paymentPlans = paymentPlans;
 	}
 	
 	
